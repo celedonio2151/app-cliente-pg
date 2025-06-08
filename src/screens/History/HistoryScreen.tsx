@@ -188,7 +188,9 @@ export default function HistoryScreen() {
         </Button> */}
       </View>
 
-      {loading && !readings && <LoadingActivity title="Cargando lecturas..." />}
+      {loading && readings.length === 0 && (
+        <LoadingActivity title="Cargando lecturas..." />
+      )}
 
       {!loading && data && data.readings.length === 0 && (
         <EmptyMessage
